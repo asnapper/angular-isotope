@@ -4,7 +4,7 @@
   "description": "Angular2 component for https://github.com/metafizzy/isotope",
   "main": "angular2-isotope.js",
   "dependencies": {
-    "isotope-layout": "^3.0.2",
+    "isotope-layout": "^3.0.2"
   },
   "devDependencies": {
     "@angular/core": "^2.1.0",
