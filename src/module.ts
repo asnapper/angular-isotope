@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { AngularMasonry } from './masonry';
-import { AngularMasonryBrick } from './brick';
+import { AngularIsotope } from './isotope';
+import { AngularIsotopeBrick } from './brick';
 
-const DIRECTIVES = [AngularMasonry, AngularMasonryBrick];
+const DIRECTIVES = [AngularIsotope, AngularIsotopeBrick];
 
 @NgModule({
     declarations: DIRECTIVES,
     exports: DIRECTIVES
 })
-export class MasonryModule { }
+export class IsotopeModule { }

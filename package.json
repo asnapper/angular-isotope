@@ -1,10 +1,10 @@
 {
-  "name": "angular2-masonry",
-  "version": "0.4.0",
-  "description": "Angular2 component for https://github.com/desandro/masonry",
-  "main": "angular2-masonry.js",
+  "name": "angular2-isotope",
+  "version": "0.0.1",
+  "description": "Angular2 component for https://github.com/metafizzy/isotope",
+  "main": "angular2-isotope.js",
   "dependencies": {
-    "masonry-layout": "^4.1.1"
+    "isotope-layout": "^3.0.2"
   },
   "devDependencies": {
     "@angular/core": "^2.1.0",
@@ -22,18 +22,19 @@
   "typings": "./index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jelgblad/angular2-masonry.git"
+    "url": "git+https://github.com/asnapper/angular2-isotope.git"
   },
   "keywords": [
     "angular2",
     "component",
     "desandro",
-    "masonry"
+    "masonry",
+    "isotope"
   ],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jelgblad/angular2-masonry/issues"
+    "url": "https://github.com/asnapper/angular2-isotope/issues"
   },
-  "homepage": "https://github.com/jelgblad/angular2-masonry#readme"
+  "homepage": "https://github.com/asnapper/angular2-isotope#readme"
 }

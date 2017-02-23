@@ -14,16 +14,16 @@ import {
     AfterViewInit
 } from '@angular/core';
 
-import { AngularMasonry } from './masonry';
+import { AngularIsotope } from './isotope';
 
 @Directive({
-    selector: '[masonry-brick], masonry-brick'
+    selector: '[isotope-brick], isotope-brick'
 })
-export class AngularMasonryBrick implements OnDestroy, AfterViewInit {
+export class AngularIsotopeBrick implements OnDestroy, AfterViewInit {
 
     constructor(
         private _element: ElementRef,
-        @Inject(forwardRef(() => AngularMasonry)) private _parent: AngularMasonry
+        @Inject(forwardRef(() => AngularIsotope)) private _parent: AngularIsotope
     ) { }
 
     ngAfterViewInit() {
