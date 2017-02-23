@@ -8,4 +8,4 @@ const DIRECTIVES = [AngularIsotope, AngularIsotopeBrick];
     declarations: DIRECTIVES,
     exports: DIRECTIVES
 })
-export class MasonryModule { }
+export class IsotopeModule { }

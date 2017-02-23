@@ -11,8 +11,7 @@ import {
     EventEmitter,
 } from '@angular/core';
 
-// import * as isotope from 'isotope-layout';
-var isotope = require('isotope-layout');
+const isotope = require('isotope-layout');
 
 import { IsotopeOptions } from './isotope-options';
 
@@ -59,8 +58,6 @@ export class AngularIsotope implements OnInit, OnDestroy {
         // Initialize Masonry
         this._isotope = new isotope(this._element.nativeElement, this.options);
 
-        // console.log('AngularIsotope:', 'Initialized');
-
         // Bind to events
         this._isotope.on('layoutComplete', (items: any) => {
             this.layoutComplete.emit(items);
@@ -81,13 +78,12 @@ export class AngularIsotope implements OnInit, OnDestroy {
             this._isotope.layout();
         });
 
-        // console.log('AngularIsotope:', 'Layout');
     }
 
     // public add(element: HTMLElement, prepend: boolean = false) {
     public add(element: HTMLElement) {
 
-        var isFirstItem = false;
+        let isFirstItem = false;
 
         // Check if first item
         if(this._isotope.items.length === 0){
@@ -115,7 +111,6 @@ export class AngularIsotope implements OnInit, OnDestroy {
             if (isFirstItem) this.layout();
         }
 
-        // console.log('AngularIsotope:', 'Brick added');
     }
 
     public remove(element: HTMLElement) {
@@ -125,6 +120,5 @@ export class AngularIsotope implements OnInit, OnDestroy {
         // Layout items
         this.layout();
 
-        // console.log('AngularIsotope:', 'Brick removed');
     }
 }

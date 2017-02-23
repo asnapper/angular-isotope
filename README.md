@@ -16,20 +16,20 @@ packages: {
 },
 map: {
   "angular2-isotope": "node_modules/angular2-isotope",
-  "masonry-layout": "node_modules/masonry-layout/dist/masonry.pkgd.js"
+  "isotope-layout": "node_modules/isotope-layout/dist/isotope.pkgd.js"
 }
 ```
 
 ## Usage
 
-Import `MasonryModule` into your app's modules:
+Import `IsotopeModule` into your app's modules:
 
 ``` typescript
-import { MasonryModule } from 'angular2-isotope';
+import { IsotopeModule } from 'angular2-isotope';
 
 @NgModule({
   imports: [
-    MasonryModule
+    IsotopeModule
   ]
 })
 ```
@@ -38,9 +38,9 @@ import { MasonryModule } from 'angular2-isotope';
  @Component({
    selector: 'my-component',
    template: `
-     <masonry>
-       <masonry-brick class="brick" *ngFor="let brick of bricks">{{brick.title}}</masonry-brick>
-     </masonry>
+     <isotope>
+       <isotope-brick class="brick" *ngFor="let brick of bricks">{{brick.title}}</masonry-brick>
+     </isotope>
      `,
      styles: [`
        .brick { width: 200px; }
@@ -81,7 +81,7 @@ The `options`-attribute takes an object with the following properties:
 
 Inline object:
 ```html
-<masonry [options]="{ transitionDuration: '0.8s' }"></masonry>
+<isotope [options]="{ transitionDuration: '0.8s' }"></isotope>
 ```
 
 From parent component:
@@ -93,7 +93,7 @@ public myOptions: IsotopeOptions = {
 };
 ```
 ```html
-<masonry [options]="myOptions"></masonry>
+<isotope [options]="myOptions"></isotope>
 ```
 
 ### imagesLoaded
@@ -102,7 +102,7 @@ public myOptions: IsotopeOptions = {
 Delay adding brick until all images in brick are loaded.
 To activate imagesLoaded set `useImagesLoaded` to `true`.
 ```html
-<masonry [useImagesLoaded]="true"></masonry>
+<isotope [useImagesLoaded]="true"></isotope>
 ```
 index.html:
 ```html
@@ -120,8 +120,5 @@ Triggered after an item element has been removed.
 
 ### Examples
 ```html
-<masonry (layoutComplete)="doStuff($event)" (removeComplete)="doOtherStuff($event)"></masonry>
+<isotope (layoutComplete)="doStuff($event)" (removeComplete)="doOtherStuff($event)"></isotope>
 ```
-
-## Demo
-* Demo project: https://github.com/asnapper/angular2-isotope-demo
