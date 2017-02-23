@@ -11,26 +11,26 @@ import {
     EventEmitter,
 } from '@angular/core';
 
-// import * as masonry from 'masonry-layout';
-var masonry = require('masonry-layout');
+// import * as isotope from 'isotope-layout';
+var isotope = require('isotope-layout');
 
-import { MasonryOptions } from './masonry-options';
+import { IsotopeOptions } from './isotope-options';
 
 @Component({
-    selector: '[masonry], masonry',
+    selector: '[isotope], isotope',
     template: '<ng-content></ng-content>'
 })
-export class AngularMasonry implements OnInit, OnDestroy {
+export class AngularIsotope implements OnInit, OnDestroy {
 
     constructor(
         private _element: ElementRef
     ) { }
 
-    public _msnry: any;
+    public _isotope: any;
     // private _imagesLoaded = null;
 
     // Inputs
-    @Input() public options: MasonryOptions;
+    @Input() public options: IsotopeOptions;
     @Input() public useImagesLoaded: Boolean = false;
 
     // Outputs
@@ -43,12 +43,12 @@ export class AngularMasonry implements OnInit, OnDestroy {
         //     this._imagesLoaded = require('imagesloaded');
         // }
 
-        // Create masonry options object
+        // Create isotope options object
         if (!this.options) this.options = {};
 
         // Set default itemSelector
         if (!this.options.itemSelector) {
-            this.options.itemSelector = '[masonry-brick], masonry-brick';
+            this.options.itemSelector = '[isotope-brick], isotope-brick';
         }
 
         // Set element display to block
@@ -57,49 +57,49 @@ export class AngularMasonry implements OnInit, OnDestroy {
         }
 
         // Initialize Masonry
-        this._msnry = new masonry(this._element.nativeElement, this.options);
+        this._isotope = new isotope(this._element.nativeElement, this.options);
 
-        // console.log('AngularMasonry:', 'Initialized');
+        // console.log('AngularIsotope:', 'Initialized');
 
         // Bind to events
-        this._msnry.on('layoutComplete', (items: any) => {
+        this._isotope.on('layoutComplete', (items: any) => {
             this.layoutComplete.emit(items);
         });
-        this._msnry.on('removeComplete', (items: any) => {
+        this._isotope.on('removeComplete', (items: any) => {
             this.removeComplete.emit(items);
         });
     }
 
     ngOnDestroy() {
-        if (this._msnry) {
-            this._msnry.destroy();
+        if (this._isotope) {
+            this._isotope.destroy();
         }
     }
 
     public layout() {
         setTimeout(() => {
-            this._msnry.layout();
+            this._isotope.layout();
         });
 
-        // console.log('AngularMasonry:', 'Layout');
+        // console.log('AngularIsotope:', 'Layout');
     }
 
     // public add(element: HTMLElement, prepend: boolean = false) {
     public add(element: HTMLElement) {
-        
+
         var isFirstItem = false;
 
         // Check if first item
-        if(this._msnry.items.length === 0){
+        if(this._isotope.items.length === 0){
             isFirstItem = true;
         }
 
         if (this.useImagesLoaded) {
             imagesLoaded(element, (instance: any) => {
                 this._element.nativeElement.appendChild(element);
-                
+
                 // Tell Masonry that a child element has been added
-                this._msnry.appended(element);
+                this._isotope.appended(element);
 
                 // layout if first item
                 if(isFirstItem) this.layout();
@@ -109,22 +109,22 @@ export class AngularMasonry implements OnInit, OnDestroy {
         }
         else {
             // Tell Masonry that a child element has been added
-            this._msnry.appended(element);
+            this._isotope.appended(element);
 
             // layout if first item
             if (isFirstItem) this.layout();
         }
 
-        // console.log('AngularMasonry:', 'Brick added');
+        // console.log('AngularIsotope:', 'Brick added');
     }
 
     public remove(element: HTMLElement) {
         // Tell Masonry that a child element has been removed
-        this._msnry.remove(element);
+        this._isotope.remove(element);
 
         // Layout items
         this.layout();
 
-        // console.log('AngularMasonry:', 'Brick removed');
+        // console.log('AngularIsotope:', 'Brick removed');
     }
 }
