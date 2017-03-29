@@ -39,7 +39,7 @@ import { IsotopeModule } from 'angular2-isotope';
    selector: 'my-component',
    template: `
      <isotope>
-       <isotope-brick class="brick" *ngFor="let brick of bricks">{{brick.title}}</masonry-brick>
+       <isotope-brick class="brick" *ngFor="let brick of bricks">{{brick.title}}</isotope-brick>
      </isotope>
      `,
      styles: [`
