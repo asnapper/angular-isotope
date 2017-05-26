@@ -1,6 +1,6 @@
 {
   "name": "angular2-isotope",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Angular2 component for https://github.com/metafizzy/isotope",
   "main": "angular2-isotope.js",
   "dependencies": {
