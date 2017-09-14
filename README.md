@@ -1,4 +1,4 @@
-# [Masonry](https://github.com/desandro/masonry) module for Angular2
+# [Masonry](https://github.com/desandro/masonry) module for Angular
 
 [![npm version](https://badge.fury.io/js/angular2-isotope.svg)](https://www.npmjs.com/package/angular2-isotope)
 
